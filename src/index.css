@@ -1,0 +1,241 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --button-bg: #f4f4f4;
+  --button-text: #000000;
+  --button-hover-bg: #e0e0e0;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --explanation-bg: #f9f9f9;
+  --explanation-border: #4caf50;
+  --explanation-text: #333;
+  --success-color: #188038;
+  --danger-color: #c5221f;
+}
+
+[data-theme='dark'] {
+  --bg-color: #222;
+  --text-color: #eee;
+  --button-bg: #333;
+  --button-text: #eee;
+  --button-hover-bg: #555;
+  --input-bg: #333;
+  --input-border: #666;
+  --explanation-bg: #333;
+  --explanation-border: #4caf50;
+  --explanation-text: #eee;
+  --success-color: #81c995;
+  --danger-color: #f28b82;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.4em;
+}
+
+p {
+  margin-top: 0;
+}
+
+input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 0.5em;
+  margin-bottom: 0.8em;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.5em 0;
+  width: 100%;
+  font-size: 16px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--input-border);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+button:hover:not(:disabled) {
+  background: var(--button-hover-bg);
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--input-border);
+  margin: 1rem 0;
+}
+
+.center-button {
+  justify-content: center;
+  text-align: center;
+}
+
+#rangeButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-top: 1rem;
+}
+
+#rangeButtons button {
+  width: 500px;
+  max-width: 100%;
+}
+
+.score {
+  margin-left: auto;
+  text-align: right;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.result {
+  font-weight: bold;
+  margin-top: 1em;
+  font-size: 18px;
+}
+
+.shortcut {
+  font-size: 12px;
+  color: #999;
+}
+
+.explanation {
+  background: var(--explanation-bg);
+  border-left: 4px solid var(--explanation-border);
+  padding: 0.6em 1em;
+  margin-top: 0.8em;
+  border-radius: 6px;
+  color: var(--explanation-text);
+  font-weight: normal;
+}
+
+.result-text {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin: 0.5em 0 0.8em;
+}
+
+.correct-text {
+  color: var(--success-color);
+}
+
+.wrong-text {
+  color: var(--danger-color);
+}
+
+.correct-choice {
+  border-color: var(--success-color);
+}
+
+.question-image {
+  max-width: 100%;
+  margin: 1em 0;
+  border-radius: 6px;
+}
+
+.progress-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+  body {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 1.2em;
+    font-size: 20px;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.6em;
+    margin-bottom: 0.6em;
+  }
+
+  p {
+    font-size: 1.15em;
+    margin-bottom: 1em;
+  }
+
+  input {
+    font-size: 20px;
+    padding: 1em;
+    border-radius: 8px;
+  }
+
+  button {
+    font-size: 40px;
+    padding: 1em 1.2em;
+    border-radius: 12px;
+    min-height: 80px;
+    line-height: 1.3;
+  }
+
+  #rangeButtons button {
+    width: 100%;
+  }
+
+  button span,
+  button .score,
+  button * {
+    font-size: inherit;
+    vertical-align: middle;
+  }
+
+  .score {
+    font-size: 40px;
+  }
+
+  .shortcut {
+    font-size: 30px;
+  }
+
+  .explanation {
+    font-size: 40px;
+    padding: 1em 1.2em;
+  }
+
+  .result-text {
+    font-size: 44px;
+  }
+}
